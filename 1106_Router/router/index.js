@@ -1,11 +1,11 @@
 // .\routes\index.js - bestand met routes voor boeken, auteurs en login.
 // Wordt ingesloten via server4.js.
-var router = require('express').Router();
-var auteurs = require('../data/auteurs.json');
-var boeken = require('../data/boeken.json');
+const router = require('express').Router();
+const auteurs = require('../data/auteurs.json');
+const boeken = require('../data/boeken.json');
 
 router.get('/api', function (req, res) {
-	var msg = '<h1>Express API</h1>';
+	let msg = '<h1>Express API</h1>';
 	msg += '<p>Gebruik \\api\\auteurs voor een lijst met auteurs.</p>';
 	msg += '<p>Gebruik \\api\\boeken voor een lijst met boeken.</p>';
 	res.send(msg);
@@ -23,8 +23,8 @@ router.get('/api/boeken', function (req, res) {
 
 // 6c. Retourneer specifiek boek, op basis van ID
 router.get('/api/boeken/:id', function (req, res) {
-	var id = req.params.id;
-	var gezochtBoek;
+	let id = req.params.id;
+	let gezochtBoek;
 	boeken.forEach(function (boek) {
 		if (boek.id === parseInt(id)) {
 			gezochtBoek = boek;
@@ -40,7 +40,7 @@ router.get('/api/boeken/:id', function (req, res) {
 });
 
 // 7. Een POST-request verwerken
-var user = {};
+let user = {};
 router.post('/user', function (req, res) {
 	// verwerk binnenkomende request. We gaan er van uit
 	// dat de parameter 'username' en 'email' aanwezig zijn.

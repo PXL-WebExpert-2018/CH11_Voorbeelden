@@ -1,8 +1,8 @@
 // routes.js - middleware via express.Router()
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-// Dit mag ook in één regel:
+// Dit mag ook in Ã©Ã©n regel:
 // var router = require('express').Router();
 
 // middleware specifiek voor deze router - merk op dat geen 'app' nodig is.
@@ -21,6 +21,7 @@ router.get('/about', function(req, res){
 });
 
 router.get('*', function(req, res){
-	res.send('onbekende route...');
+	res.send('test route...');
 });
+
 module.exports = router;

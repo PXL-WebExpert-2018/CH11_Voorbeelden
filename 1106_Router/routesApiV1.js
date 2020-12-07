@@ -1,6 +1,6 @@
 // API - versie 1
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // homepage voor deze router.
 router.get('/', function(req, res){

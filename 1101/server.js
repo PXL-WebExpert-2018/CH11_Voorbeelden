@@ -1,5 +1,5 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 // 1. Routes voor deze app - ten eerste de Homepage
 app.get('/', function (req, res) {
@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
 });
 
 // 2. JSON retour zenden
-var persoon = {
+let persoon = {
 	voornaam  : 'Peter',
 	achternaam: 'Kassenaar'
 };

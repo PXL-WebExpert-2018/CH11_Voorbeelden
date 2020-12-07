@@ -1,9 +1,9 @@
 // Express laden
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 // Middleware laden voor het parsen van JSON in het request
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
@@ -14,7 +14,7 @@ app.get('/', function(req, res){
 });
 
 // Een POST-request verwerken
-var user = {};
+let user = {};
 app.post('/', function (req, res) {
 	// verwerk binnenkomende request. We gaan er van uit
 	// dat de parameter 'username' en 'email' aanwezig zijn.

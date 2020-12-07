@@ -1,8 +1,8 @@
 // Express en externe routes laden
-var express = require('express');
-var routesV1 = require('./routesApiV1');
-var routesV2 = require('./routesApiV2');
-var app = express();
+const express = require('express');
+const routesV1 = require('./routesApiV1');
+const routesV2 = require('./routesApiV2');
+const app = express();
 
 // Er worden twee paden gedefinieerd voor routes naar de juiste versie
 // van de API.

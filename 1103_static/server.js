@@ -1,9 +1,9 @@
 // 1. Maak de Express-app
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 // 2. Haal de gegevens binnen de app (in werkelijkheid doen we hier bv een database-call)
-var auteurs = require('./auteurs.json');
-var boeken = require('./boeken.json');
+const auteurs = require('./auteurs.json');
+const boeken = require('./boeken.json');
 
 // 3. Stel middleware in voor serveren van statische bestanden (HTML, CSS, images)
 app.use(express.static(__dirname + '/public'));
@@ -16,7 +16,7 @@ console.log('Express app gestart op localhost:3000');
 // 4. De Routes voor de API.
 //**************************
 app.get('/api', function(req, res){
-	var msg ='<h1>Express API</h1>';
+	let msg ='<h1>Express API</h1>';
 	msg += '<p>Gebruik \\api\\auteurs voor een lijst met auteurs.</p>';
 	msg += '<p>Gebruik \\api\\boeken voor een lijst met boeken.</p>';
 	res.send(msg);
@@ -34,8 +34,8 @@ app.get('/api/boeken', function(req, res){
 
 // 4c. Retourneer specifiek boek, op basis van ID
 app.get('/api/boeken/:id', function(req, res){
-	var id= req.params.id;
-	var gezochtBoek;
+	let id= req.params.id;
+	let gezochtBoek;
 	boeken.forEach(function(boek){
 		if(boek.id === parseInt(id)){
 			gezochtBoek = boek;
